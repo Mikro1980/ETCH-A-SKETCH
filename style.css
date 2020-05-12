@@ -1,0 +1,43 @@
+
+body,html {
+    background-color: #daa520 ;
+    /*background-image: url("bike.jpg") ;*/
+}
+h1 {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-family: "Sofia";
+  font-size: 40px;
+}
+.container {
+    margin: auto;
+    background-color:  rgba(200, 255, 255, 0.7);;
+    width: 500px;
+    height: 500px;
+    border: solid 40px rgba(30, 58, 212);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    
+  
+}
+.new {
+    background-color: yellowgreen;
+    display: flex;
+    
+    width: var(--sqSide);
+    height: var(--sqSide);
+}
+.reset {
+    background-color: black;
+    display: flex;
+    
+    width: var(--sqSide);
+    height: var(--sqSide);
+}
+    
+
+/*.new:hover {
+    background-color: black;
+     
+}*/

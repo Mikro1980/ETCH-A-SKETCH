@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="style.css">   
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+     <title>Etch-a-sketch</title>
+</head>
+<body>
+    <h1>Etch-A-Sketch</h1>
+<div class="container">
+</div>
+<button>RESET</button>
+<script>
+
+
+
+let item;
+
+let width = 500;
+let height = 500;
+game();
+function game(){
+//removeDivs();
+
+let num = prompt('Give me you number','16');
+
+makeDiv(num);
+
+let root = document.documentElement; // setting CSS varisble --sqSide
+    root.style.setProperty('--sqSide', width/num + 'px');
+
+function makeDiv(num){ // creating divs inside container div
+    
+    for (i = 0; i <= num**2-1; i++) {
+    const container = document.querySelector('div');
+    item = document.createElement('div');
+    item.classList.add('new');
+    item.setAttribute('id','newid');
+    container.appendChild(item);
+    }
+}
+const divN = document.querySelectorAll('#newid'); // Apply inline div style (background black)
+     divN.forEach((div) => {
+     div.addEventListener('mouseover', ()=>{
+     div.style.backgroundColor = 'black';
+  });
+     });
+
+const my_button=document.querySelector('button');
+my_button.addEventListener('click',()=>{
+    
+    
+    removeDivs();
+    return;
+});
+
+function removeDivs(){
+    for (i=num**2-1;num>0;i--){
+    let element = document.getElementById('newid');
+    element.parentNode.removeChild(element);
+    };
+};
+};
+</script>
+
+</body>
+</html>
