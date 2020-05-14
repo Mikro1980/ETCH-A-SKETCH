@@ -28,7 +28,8 @@ h1 {
     width: var(--sqSide);
     height: var(--sqSide);
 }
-.reset {
+
+.hovered {
     background-color: black;
     display: flex;
     

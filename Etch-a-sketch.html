@@ -21,14 +21,18 @@ let width = 500;
 let height = 500;
 game();
 function game(){
+    
 //removeDivs();
 
 let num = prompt('Give me you number','16');
 
 makeDiv(num);
 
+
 let root = document.documentElement; // setting CSS varisble --sqSide
     root.style.setProperty('--sqSide', width/num + 'px');
+
+const container = document.querySelector('div');
 
 function makeDiv(num){ // creating divs inside container div
     
@@ -40,28 +44,37 @@ function makeDiv(num){ // creating divs inside container div
     container.appendChild(item);
     }
 }
+
 const divN = document.querySelectorAll('#newid'); // Apply inline div style (background black)
-     divN.forEach((div) => {
+     divN.forEach((div) => { 
      div.addEventListener('mouseover', ()=>{
-     div.style.backgroundColor = 'black';
+     div.classList.add('hovered');
+     //div.setAttribute('id','hovered');
+     console.log(div.classList);
+  });
+    
+     div.addEventListener('click', ()=>{
+     div.style.backgroundColor = 'yellowgreen'; // Add and remove class are prefereble
   });
      });
 
 const my_button=document.querySelector('button');
 my_button.addEventListener('click',()=>{
+   
+    removeDivs()
+     
     
-    
-    removeDivs();
-    return;
 });
 
-function removeDivs(){
-    for (i=num**2-1;num>0;i--){
-    let element = document.getElementById('newid');
-    element.parentNode.removeChild(element);
+function removeDivs(){ // removes divs
+   let element = document.getElementsByClassName('new hovered');
+   console.log(element);
+   while(element.length>0){
+     element[0].classList.remove('hovered');
+   };
     };
 };
-};
+
 </script>
 
 </body>
